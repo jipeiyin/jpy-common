@@ -20,4 +20,25 @@ public class DateUtilTest {
 		System.out.println(df.format(date));
 	}
 
+	@Test
+	public void testInitMonth() {
+		Date date = DateUtil.getInitMonth(new Date());
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(fmt.format(date));
+	}
+	
+	@Test
+	public void testEndMonth() {
+		Date date = DateUtil.getEndMonth(new Date());
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(fmt.format(date));
+	}
+	
+	@Test
+	public void testAgeByBirthday() {
+		Calendar c = Calendar.getInstance();
+		c.set(2010,10,20);
+		int age = DateUtil.getAgeByBirthday(c.getTime());
+		System.out.println(age);
+	}
 }
