@@ -45,6 +45,15 @@ public class RandomUtil {
 		char s = str.charAt(random(0, str.length()-1));
 		return s;
 	}
+	//返回0-9
+	public static String randonNumber(int length) {
+		String str = "1234567890";
+		String result=null;
+		for (int i = 0; i < length; i++) {
+			result+=str.charAt(random(0, str.length()-1));
+		}
+		return result;
+	}
 	//方法4：返回参数length个字符串(5分)，方法内部要调用randomCharacter()方法 (4分)
 	public static String randomString(int length){
 		StringBuffer sb = new StringBuffer();
