@@ -48,7 +48,7 @@ public class RandomUtil {
 	//返回0-9
 	public static String randonNumber(int length) {
 		String str = "1234567890";
-		String result=null;
+		String result="";
 		for (int i = 0; i < length; i++) {
 			result+=str.charAt(random(0, str.length()-1));
 		}
