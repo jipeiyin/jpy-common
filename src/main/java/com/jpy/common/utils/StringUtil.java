@@ -2,6 +2,7 @@ package com.jpy.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 /**
  * 
@@ -55,5 +56,23 @@ public class StringUtil {
 		String name2 = randomChineseString(RandomUtil.random(1, 2));
 		return name1+name2;
 	}
-
+	//判断是否是邮箱格式
+	public static boolean isEmail(String email) {
+		if(!email.matches("^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\\\\.([a-zA-Z0-9_-])+)+$")) {
+			return true;
+		}
+		return false;
+	}
+	//判断是否是手机号
+	public static boolean isPhone(String phone) {
+		if(phone.matches("^[1]+[3,4,7,8]+\\d{9}$")) {
+			return true;
+		}
+		return false;
+	}
+	//判断是否是数字,正负数,小数
+	public static boolean isNumber(String number) {
+		String reg = "^(-)?[0-9]+(\\.[0-9]+)?$";
+		return number.matches(reg);
+	}
 }

@@ -36,5 +36,22 @@ public class StringUtilTest {
 		String name = StringUtil.generateChineseName();
 		System.out.println(name);
 	}
-
+	
+	@Test
+	public void testIsEmail() {
+		boolean email = StringUtil.isEmail("3201426044@qq.com");
+		System.out.println(email);
+	}
+	
+	@Test
+	public void testIsPhone() {
+		boolean phone = StringUtil.isPhone("17634963409");
+		System.out.println(phone);
+	}
+	
+	@Test
+	public void testIsNumber() {
+		boolean number = StringUtil.isNumber("0.28");
+		System.out.println(number);
+	}
 }
